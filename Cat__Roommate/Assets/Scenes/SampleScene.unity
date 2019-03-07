@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &284009147
 RectTransform:
   m_ObjectHideFlags: 0
@@ -273,8 +273,9 @@ GameObject:
   m_Component:
   - component: {fileID: 350656427}
   - component: {fileID: 350656426}
+  - component: {fileID: 350656428}
   m_Layer: 0
-  m_Name: Cat_Roommate_11
+  m_Name: CatRoommate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,6 +343,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &350656428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350656425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f673db18c135948f990c96365e7355c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catBigSmile: {fileID: 21300002, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catBigSmiletears: {fileID: 21300004, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catOpenSmile: {fileID: 21300006, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catHeartEyes: {fileID: 21300008, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catSnarky: {fileID: 21300010, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catKiss: {fileID: 21300012, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catEyesclosed: {fileID: 21300014, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catFrown: {fileID: 21300016, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catTear: {fileID: 21300018, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catWail: {fileID: 21300020, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  catDefault: {fileID: 21300022, guid: 8216e85568210427fb35e43675f3e260, type: 3}
+  PointTracker: {fileID: 1631764634}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,8 +616,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281897717
+  m_fontColor: {r: 0.9607844, g: 0.57254905, b: 0.21960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -736,11 +761,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftResponse: 0
   _rightResponse: 0
+  _leftResponseChosen: 0
+  _rightResponseChosen: 0
   _rightResponsetxt: {fileID: 718159733}
   _leftResponsetxt: {fileID: 1180134599}
   CatRoommateQuestions: {fileID: 703548863}
   Response2: {fileID: 718159731}
   Response1: {fileID: 1180134597}
+  ChangeCatSprite: {fileID: 350656425}
+  PointTracker: {fileID: 1631764634}
 --- !u!4 &1135740226
 Transform:
   m_ObjectHideFlags: 0
@@ -822,8 +851,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4290237691
+  m_fontColor: {r: 0.9843138, g: 0.8313726, b: 0.7176471, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1176,6 +1205,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431553928}
   m_CullTransparentMesh: 0
+--- !u!1 &1631764634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631764636}
+  - component: {fileID: 1631764635}
+  m_Layer: 0
+  m_Name: PointTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1631764635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631764634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cfff624b02f7470bb109d69cac8987a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodResponses: 0
+  badResponses: 0
+  PlayerResponse: {fileID: 1135740224}
+  CatRoommate: {fileID: 350656425}
+--- !u!4 &1631764636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631764634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 324.69928, y: 452.01193, z: -14.6795635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1812574224
 GameObject:
   m_ObjectHideFlags: 0
