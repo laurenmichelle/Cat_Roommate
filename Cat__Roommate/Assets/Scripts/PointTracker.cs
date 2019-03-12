@@ -9,6 +9,8 @@ public class PointTracker : MonoBehaviour
     private int responseNum;
     public GameObject PlayerResponse;
     public GameObject CatRoommate;
+    public string endResult;
+    public GameObject ChangeQuestion;
 
     // Start is called before the first frame update
     void Start()
@@ -126,12 +128,41 @@ public class PointTracker : MonoBehaviour
 
         else if (responseNum == 6)
         {
+            if (PlayerResponse.GetComponent<PlayerResponse>()._rightResponseChosen == true)
+            {
 
+
+                badResponses += 1;
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 6 & badResponse = " + badResponses);
+
+            }
+            else if (PlayerResponse.GetComponent<PlayerResponse>()._leftResponseChosen == true)
+            {
+               
+
+                goodResponses += 1;
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 6 & goodResponse = " + goodResponses);
+            }
         }
 
         else if (responseNum == 7)
         {
+            if (PlayerResponse.GetComponent<PlayerResponse>()._rightResponseChosen == true)
+            {
 
+
+                badResponses += 1;
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 7 & badResponse = " + badResponses);
+
+            }
+            else if (PlayerResponse.GetComponent<PlayerResponse>()._leftResponseChosen == true)
+            {
+
+
+                goodResponses += 1;
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 7 & goodResponse = " + goodResponses);
+            }
+            ChangeQuestion.GetComponent<ChangeQuestion>().gameOver();
         }
 
 
@@ -141,5 +172,6 @@ public class PointTracker : MonoBehaviour
 
 
     }
+   
 }
 

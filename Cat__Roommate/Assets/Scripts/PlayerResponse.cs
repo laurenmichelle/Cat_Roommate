@@ -35,8 +35,8 @@ public class PlayerResponse : MonoBehaviour
         {
             _rightResponse = true;
             _leftResponse = false;
-            _rightResponsetxt.color = new Color(0, 0, 0,100);
-            _leftResponsetxt.color = new Color(255, 255, 255, 100);
+            _rightResponsetxt.color = new Color(255,255,255,100);
+            _leftResponsetxt.color = new Color(0, 0, 0, 100);
             //Debug.Log("The Color should be black on the right");
         }
 
@@ -45,8 +45,8 @@ public class PlayerResponse : MonoBehaviour
         {
             _leftResponse = true;
             _rightResponse = false;
-            _leftResponsetxt.color = new Color(0, 0, 0, 100);
-            _rightResponsetxt.color = new Color(255, 255, 255, 100);
+            _leftResponsetxt.color = new Color(255,255,255,100);
+            _rightResponsetxt.color = new Color(0,0,0, 100);
             //Debug.Log("The Color should be black on the left");
         }
 
