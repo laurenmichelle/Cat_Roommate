@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+// This Function is used to change the text of both the Cat Roommate & the Player's responses
 public class ChangeQuestion : MonoBehaviour
 {
     public TextMeshProUGUI _catQuestions;

@@ -93,7 +93,7 @@ public class PointTracker : MonoBehaviour
             if (PlayerResponse.GetComponent<PlayerResponse>()._rightResponseChosen == true)
             {
                 goodResponses += 1;
-                Debug.Log("HELLO THERE. RESPONSE NUM IS 4 & goodResponse = " + goodResponses);
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 4 & badResponse = " + goodResponses);
 
 
 
@@ -101,7 +101,7 @@ public class PointTracker : MonoBehaviour
             else if (PlayerResponse.GetComponent<PlayerResponse>()._leftResponseChosen == true)
             {
                 badResponses += 1;
-                Debug.Log("HELLO THERE. RESPONSE NUM IS 4 & badResponse = " + badResponses);
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 4 & goodResponse = " + badResponses);
 
 
             }
@@ -111,16 +111,16 @@ public class PointTracker : MonoBehaviour
         {
             if (PlayerResponse.GetComponent<PlayerResponse>()._rightResponseChosen == true)
             {
-                goodResponses += 1;
-                Debug.Log("HELLO THERE. RESPONSE NUM IS 5 & goodResponse = " + goodResponses);
+                badResponses += 1;
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 5 & badResponse = " + badResponses);
 
 
 
             }
             else if (PlayerResponse.GetComponent<PlayerResponse>()._leftResponseChosen == true)
             {
-                badResponses += 1;
-                Debug.Log("HELLO THERE. RESPONSE NUM IS 5 & badResponse = " + badResponses);
+                goodResponses += 1;
+                Debug.Log("HELLO THERE. RESPONSE NUM IS 5 & goodResponse = " + goodResponses);
 
 
             }

@@ -24,6 +24,7 @@ public class ChangeCatSprite : MonoBehaviour
     public Sprite[] allCats;
     public Sprite[] badCats;
     public Sprite[] goodCats;
+    public float turnSpeed;
 
 
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class ChangeCatSprite : MonoBehaviour
         _previousGoodResponse = 0;
         _previousBadResponse = 0;
 
-
+        turnSpeed = 100f;
        
 
 
@@ -43,7 +44,9 @@ public class ChangeCatSprite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (Input.GetKey(KeyCode.Space)){
+            gameObject.transform.Rotate(new Vector3(0,0,turnSpeed * Time.deltaTime));
+        }
 
     }
 
@@ -51,7 +54,6 @@ public class ChangeCatSprite : MonoBehaviour
 
     {
         _goodResponses = PointTracker.GetComponent<PointTracker>().goodResponses;
-
         _badResponses = PointTracker.GetComponent<PointTracker>().badResponses;
         currentSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
 
@@ -80,105 +82,5 @@ public class ChangeCatSprite : MonoBehaviour
         }
 
        
-        //if ((_badResponses + _goodResponses)<2)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catOpenSmile;
-        //    Debug.Log("CAT SMILE SHOULD APPEAR");
-        //}
-        //else if (_badResponses == 1 && _goodResponses == 1)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catEyesclosed;
-        //    Debug.Log("CAT EYES CLOSED");
-        //}
-        //else if (_badResponses == 2 && _goodResponses == 0)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catKiss;
-        //    Debug.Log("CAT FROWN");
-        //}
-        //else if (_badResponses == 0 && _goodResponses == 2)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catBigSmile;
-        //    Debug.Log("CAT BIG SMILE");
-        //}
-        //else if (_badResponses == 1 && _goodResponses == 2)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catHeartEyes;
-        //    Debug.Log("CAT HEART EYES");
-        //}
-        //else if (_badResponses == 2 && _goodResponses == 1)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catWail;
-        //    Debug.Log("CAT WAIL");
-        //}
-        //else if (_badResponses == 3 && _goodResponses == 0)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catFrown;
-        //    Debug.Log("CAT TEAR");
-        //}
-
-        //else if (_badResponses == 0 && _goodResponses == 3)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catBigSmiletears;
-        //    Debug.Log("CAT HEART EYES");
-        //}
-        //else if (_badResponses == 4 && _goodResponses == 0)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catTear;
-        //    Debug.Log("CAT TEAR");
-        //}
-        //else if (_badResponses == 0 && _goodResponses == 4)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catHeartEyes;
-        //    Debug.Log("CAT HEART EYES");
-        //}
-        //else if (_badResponses == 2 && _goodResponses == 2)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catOpenSmile;
-        //    Debug.Log("CAT OPEN SMILE");
-        //}
-        //else if (_badResponses == 5 && _goodResponses == 0)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catBigSmiletears;
-        //    Debug.Log("CAT BIG SMILE TEARS");
-        //}
-        //else if (_badResponses == 0 && _goodResponses == 5)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catTear;
-        //    Debug.Log("CAT TEAR");
-        //}
-
-        //else if (_badResponses == 6 && _goodResponses == 0)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catTear;
-        //    Debug.Log("CAT TEAR");
-        //}
-
-        //else if (_badResponses == 0 && _goodResponses == 6)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catEyesclosed;
-        //    Debug.Log("CAT TEAR");
-        //}
-
-        //else if (_badResponses == 7 && _goodResponses == 0)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catDefault;
-        //    Debug.Log("CAT TEAR");
-        //}
-
-        //else if (_badResponses == 0 && _goodResponses == 7)
-        //{
-        //    gameObject.GetComponent<SpriteRenderer>().sprite = catDefault;
-        //    Debug.Log("CAT TEAR");
-        //}
-
-        //else
-        //{
-        //    Debug.Log("RANDOMNESS TIME");
-        //    int i = Random.Range(0, 9);
-        //    Debug.Log(allCats.Length);
-        //    Debug.Log(i);
-        //    gameObject.GetComponent <SpriteRenderer>().sprite = allCats[i];
-        //}
-
-    }
+}
 }
