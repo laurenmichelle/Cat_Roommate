@@ -13,6 +13,10 @@ public class ChangeQuestion : MonoBehaviour
     public GameObject PointTracker;
     private int _goodResponses;
     private int _badResponses;
+    public AudioSource hiss;
+    //public AudioClip hissSound;
+    public AudioSource purr;
+    //public AudioClip purrSound;
 
 
     //Change the Response/Question that the player can choose
@@ -40,17 +44,21 @@ public class ChangeQuestion : MonoBehaviour
         {
 
             _catQuestions.text = _allQuestions[6];
+            purr.Play();
+
 
         }
         else if(_badResponses >= 4)
         {
             _catQuestions.text = _allQuestions[7];
+            hiss.Play();
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        //purr.clip = purrSound;
+        //hiss.clip = hissSound;
     }
 
     // Update is called once per frame

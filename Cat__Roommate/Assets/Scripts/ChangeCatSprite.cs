@@ -25,6 +25,11 @@ public class ChangeCatSprite : MonoBehaviour
     public Sprite[] badCats;
     public Sprite[] goodCats;
     public float turnSpeed;
+    public GameObject _Dial;
+
+    public AudioSource meow;
+    //public AudioClip meowSound;
+
 
 
     // Start is called before the first frame update
@@ -33,8 +38,9 @@ public class ChangeCatSprite : MonoBehaviour
 
         _previousGoodResponse = 0;
         _previousBadResponse = 0;
+        //meow.clip = meowSound;
 
-        turnSpeed = 100f;
+        //turnSpeed = 100f;
        
 
 
@@ -53,6 +59,7 @@ public class ChangeCatSprite : MonoBehaviour
     public void changeSprite()
 
     {
+
         _goodResponses = PointTracker.GetComponent<PointTracker>().goodResponses;
         _badResponses = PointTracker.GetComponent<PointTracker>().badResponses;
         currentSprite = gameObject.GetComponent<SpriteRenderer>().sprite;
@@ -62,7 +69,11 @@ public class ChangeCatSprite : MonoBehaviour
        if(_badResponses + _goodResponses >=7)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = catDefault;
+            
         }
+
+
+
 
 
         else if(_previousBadResponse< _badResponses)
@@ -70,7 +81,12 @@ public class ChangeCatSprite : MonoBehaviour
             int k = Random.Range(0, 5);
             gameObject.GetComponent<SpriteRenderer>().sprite = badCats[k];
             _previousBadResponse += 1;
-                 
+            _Dial.transform.Rotate(new Vector3(0, 0,10 ));
+            meow.Play();
+
+            //gameObject.transform.Rotate(new Vector3(0, 0, turnSpeed * Time.deltaTime));
+
+
         }
         else if(_previousGoodResponse < _goodResponses)
         {
@@ -79,6 +95,8 @@ public class ChangeCatSprite : MonoBehaviour
             Debug.Log("PREVIOUS GOOD RESPONSE: " + _previousGoodResponse);
             _previousGoodResponse += 1;
             Debug.Log("PREVIOUS GOOD RESPONSE: " + _previousGoodResponse);
+            _Dial.transform.Rotate(new Vector3(0, 0, -10));
+            meow.Play();
         }
 
        
